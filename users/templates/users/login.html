@@ -1,6 +1,10 @@
 {% extends 'users/layout.html' %}
 
 {% block body %}
+
+    {% if message %}
+        <h1>{{ message }}</h1>
+    {% endif %}
     <h1>Login Page</h1>
 
     <form action="{% url 'login' %}" method="post">
