@@ -2,15 +2,15 @@
 
 {% block body %}
 
-    {% if message %}
-        <h1>{{ message }}</h1>
-    {% endif %}
     <h1>Login Page</h1>
 
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
+        <input type="text" name="username" placeholder="Username"> 
+        {% if message %}
+            {{ message }}
+        {% endif %}<br><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
         <input type="submit" value="Login">
     </form>
 {% endblock %}
